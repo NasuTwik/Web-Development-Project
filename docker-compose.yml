@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  server-a:
+    build: ./server-a
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - SERVER_B_URL=http://server-b:4000
+    volumes:
+      - server-a-data:/app/data
+    networks:
+      - animal-net
+
+  server-b:
+    build: ./server-b
+    ports:
+      - "4000:4000"
+    environment:
+      - PORT=4000
+    volumes:
+      - server-b-data:/app/data
+    networks:
+      - animal-net
+
+volumes:
+  server-a-data:
+  server-b-data:
+
+networks:
+  animal-net:
+    driver: bridge

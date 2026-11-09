@@ -1,0 +1,23 @@
+# Node modules (riippuvuudet ladataan kontissa tai npm installilla)
+node_modules/
+**/node_modules/
+
+# Tietokantatiedostot (SQLite-tietokannat luodaan lennosta)
+*.db
+*.sqlite
+*.sqlite3
+**/data/*.db
+**/data/*.sqlite
+
+# Lokitiedostot
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Käyttöjärjestelmän roskatiedostot
+.DS_Store
+Thumbs.db
+
+# Ympäristömuuttujat (jos käytät .env tiedostoja)
+.env
